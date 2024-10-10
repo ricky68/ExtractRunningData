@@ -1,7 +1,7 @@
 This project uses the wavacalc15.xls file from Howard Grubb and saves it to MariaDB in a relational format.  
 I'm intending to use it in my next home project.
 </br></br>
-To use it you will need to create an appsettings.json for the ExtractRunningData Project.  
+To use it you will need to create an appsettings.json in the ExtractRunningData Project.  
 appsettings.json  
 ```
 {
