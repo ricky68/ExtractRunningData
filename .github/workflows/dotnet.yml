@@ -23,7 +23,7 @@ jobs:
     - name: Navigate to project folder
       run:  cd ExtractRunningData
     - name: Create appsettings.json from template
-      run:  cp appsettings.example.json appsettings.json
+      run:  cp ./ExtractRunningData/appsettings.example.json ./ExtractRunningData/appsettings.json
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
