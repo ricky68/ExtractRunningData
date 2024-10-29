@@ -12,6 +12,9 @@ var builder = new ConfigurationBuilder()
 
 IConfigurationRoot configuration = builder.Build();
 
+string currentPath = Directory.GetCurrentDirectory();
+Console.WriteLine("Current Path: " + currentPath);
+
 var optionsBuilder = new DbContextOptionsBuilder<EventDataContext>();
 optionsBuilder.UseMySql(
     $"server={configuration["DbServer"]};port={configuration["DbPort"]};database={configuration["DbName"]};user={configuration["DbUser"]};password={configuration["DbPassword"]}",
