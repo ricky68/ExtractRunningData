@@ -1,7 +1,5 @@
 ﻿using ExtractRunningData.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
-using System.Diagnostics.CodeAnalysis;
 
 namespace ExtractRunningData
 {
