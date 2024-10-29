@@ -20,9 +20,10 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
-    - name: Create appsettings.json from template
+    - name: Navigate to project folder
       run:  cd ExtractRunningData
-            cp appsettings.example.json appsettings.json
+    - name: Create appsettings.json from template
+      run:  cp appsettings.example.json appsettings.json
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
