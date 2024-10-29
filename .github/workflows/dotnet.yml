@@ -21,7 +21,7 @@ jobs:
       with:
         dotnet-version: 8.0.x
     - name: Navigate to project folder
-      run:  cd ./ExtractRunningData/ExtractRunningData
+      run:  cd .
     - name: Create appsettings.json from template
       run:  cp appsettings.example.json appsettings.json
     - name: Restore dependencies
