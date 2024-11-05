@@ -18,7 +18,7 @@ namespace ExtractRunningDataTests
             DatabaseHandler.SaveEventDataToDatabase(_context, _eventDataList);
 
             // Act: Retrieve the first event data entry from the database
-            var eventData = _context.EventData.Find(1);
+            var eventData = _context.RunningEventData.Find(1);
 
             // Assert: Verify the retrieved event data is not null
             Assert.That(eventData, Is.Not.Null);

@@ -8,22 +8,22 @@ using System.Threading.Tasks;
 namespace ExtractRunningData.Models
 {
     // create initialiser for event data
-    public class EventData : IEventData
+    public class RunningEventData : IRunningEventData
     {
-        public int EventDataId { get; set; } // Auto-incremented index
+        public int RunningEventDataId { get; set; } // Auto-incremented index
         public required string EventName { get; set; }
         public bool IsRoad { get; set; }
         public double Distance { get; set; }
         public double OC { get; set; }
         public char Sex { get; set; }
         // Navigation property to link to associated EventFactors
-        public ICollection<EventFactors> EventFactors { get; set; } = [];
+        public ICollection<RunningEventFactors> RunningEventFactors { get; set; } = [];
 
-        public EventData() { }
+        public RunningEventData() { }
 
-        public EventData(int eventDataId, string eventName, bool isRoad, double distance, double oc, char sex)
+        public RunningEventData(int eventDataId, string eventName, bool isRoad, double distance, double oc, char sex)
         {
-            EventDataId = eventDataId;
+            RunningEventDataId = eventDataId;
             EventName = eventName;
             IsRoad = isRoad;
             Distance = distance;
@@ -32,23 +32,23 @@ namespace ExtractRunningData.Models
         }
     }
 
-    public class EventFactors : IEventFactors
+    public class RunningEventFactors : IRunningEventFactors
     {
-        public int EventFactorsId { get; set; } // Auto-incremented index
+        public int RunningEventFactorsId { get; set; } // Auto-incremented index
         public int Age { get; set; }
         public double Factor { get; set; }
 
         // Foreign key referencing EventData.Id
-        public int EventDataId { get; set; }
+        public int RunningEventDataId { get; set; }
 
         // Navigation property to link to the EventData
-        public required EventData EventData { get; set; }
+        public required RunningEventData RunningEventData { get; set; }
 
-        public EventFactors() { }
+        public RunningEventFactors() { }
 
-        public EventFactors(int eventFactorsId, int age, int factor)
+        public RunningEventFactors(int eventFactorsId, int age, int factor)
         {
-            EventFactorsId = eventFactorsId;
+            RunningEventFactorsId = eventFactorsId;
             Age = age;
             Factor = factor;
         }

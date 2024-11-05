@@ -5,7 +5,7 @@ namespace ExtractRunningData
 {
     public interface IEventDataContext
     {
-        DbSet<EventData> EventData { get; set; }
+        DbSet<RunningEventData> RunningEventData { get; set; }
 
         void Dispose();
     }

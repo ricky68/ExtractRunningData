@@ -23,7 +23,7 @@ namespace ExtractRunningDataTests
             //Arrange
             DatabaseHandler.SaveEventDataToDatabase( _context, _eventDataList);
             //Act
-            var eventData = _context.EventData.ToList();
+            var eventData = _context.RunningEventData.ToList();
             // Assert: Verify the number of entries in the database is 146
             Assert.That(eventData, Has.Count.EqualTo(146));
         }

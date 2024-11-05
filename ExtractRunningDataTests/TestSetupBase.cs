@@ -16,7 +16,7 @@ namespace ExtractRunningDataTests
     public abstract class TestSetupBase
     {
         protected FileStream? _stream;
-        protected List<EventData> _eventDataList = [];
+        protected List<RunningEventData> _eventDataList = [];
         protected IConfigurationRoot _configuration;
         protected EventDataContext _context;
 

@@ -13,17 +13,18 @@ namespace ExtractRunningData.Classes
                 .Any(row => row["TABLE_NAME"].ToString() == tableName);
         }
 
-        public static void SaveEventDataToDatabase(EventDataContext context, List<EventData> EventDataList)
+        public static void SaveEventDataToDatabase(EventDataContext context, List<RunningEventData> EventDataList)
         {
             try
             {
                 // Our test database is in-memory, so we need to check if the table exists
                 if (context.Database.IsRelational())
                 {
-                    context.Database.ExecuteSql($"DELETE FROM eventdata");
-                    context.Database.ExecuteSql($"DELETE FROM eventfactors");
+                    context.Database.EnsureCreated();
+                    context.Database.ExecuteSql($"DELETE FROM runningeventdata");
+                    context.Database.ExecuteSql($"DELETE FROM runningeventfactors");
                 }
-                context.EventData.AddRange(EventDataList);
+                context.RunningEventData.AddRange(EventDataList);
                 context.SaveChanges();
             }
             catch (DbUpdateException ex)
