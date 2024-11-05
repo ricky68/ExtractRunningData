@@ -20,10 +20,6 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
-    - name: cd ExtractRunningData
-      run: cd ExtractRunningData
-    - name: Run pwd
-      run: ls -als
     - name: Create appsettings.json from template
       run:  cp ExtractRunningData/appsettings.example.json ExtractRunningData/appsettings.json
     - name: Restore dependencies
