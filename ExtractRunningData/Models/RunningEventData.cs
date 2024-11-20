@@ -19,7 +19,9 @@ namespace ExtractRunningData.Models
         // Navigation property to link to associated EventFactors
         public ICollection<RunningEventFactors> RunningEventFactors { get; set; } = [];
 
-        public RunningEventData() { }
+        public RunningEventData() {
+            RunningEventFactors = [];
+        }
 
         public RunningEventData(int eventDataId, string eventName, bool isRoad, double distance, double oc, char sex)
         {

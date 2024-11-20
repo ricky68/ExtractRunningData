@@ -1,6 +1,7 @@
 ﻿using ExtractRunningData.Models;
 using Microsoft.EntityFrameworkCore;
 using MySqlConnector;
+using System.Data;
 
 namespace ExtractRunningData.Classes
 {
@@ -8,9 +9,13 @@ namespace ExtractRunningData.Classes
     {
         public static bool DoesTableExist(DbContext context, string tableName)
         {
-            return context.Database.GetDbConnection().GetSchema("Tables")
-                .Rows.Cast<System.Data.DataRow>()
-                .Any(row => row["TABLE_NAME"].ToString() == tableName);
+
+            var connection = context.Database.GetDbConnection();
+            connection.Open();
+            var tables = connection.GetSchema("Tables", [null, null, tableName, null]);
+            connection.Close();
+
+            return tables.Rows.Cast<DataRow>().Any(row => row["TABLE_NAME"].ToString() == tableName);
         }
 
         public static void SaveEventDataToDatabase(EventDataContext context, List<RunningEventData> EventDataList)
@@ -20,7 +25,7 @@ namespace ExtractRunningData.Classes
                 // Our test database is in-memory, so we need to check if the table exists
                 if (context.Database.IsRelational())
                 {
-                    context.Database.EnsureCreated();
+                    var result = context.Database.EnsureCreated();
                     context.Database.ExecuteSql($"DELETE FROM runningeventdata");
                     context.Database.ExecuteSql($"DELETE FROM runningeventfactors");
                 }
