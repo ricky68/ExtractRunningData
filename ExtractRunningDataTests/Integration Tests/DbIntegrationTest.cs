@@ -8,7 +8,7 @@ using System.IO;
 using System;
 using Microsoft.Extensions.Options;
 
-namespace ExtractRunningDataTests
+namespace ExtractRunningDataTests.Integration
 {
     public class DbIntegrationTest
     {

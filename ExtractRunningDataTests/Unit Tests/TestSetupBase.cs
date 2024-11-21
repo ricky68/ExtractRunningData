@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using ExtractRunningData.Models;
 using Microsoft.Extensions.Configuration;
 
-namespace ExtractRunningDataTests
+namespace ExtractRunningDataTests.Unit
 {
     public abstract class TestSetupBase
     {

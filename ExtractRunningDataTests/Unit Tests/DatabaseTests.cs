@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using ExtractRunningData.Classes;
 using Microsoft.EntityFrameworkCore;
 
-namespace ExtractRunningDataTests
+namespace ExtractRunningDataTests.Unit
 {
     internal class DatabaseTests : TestSetupBase
     {
