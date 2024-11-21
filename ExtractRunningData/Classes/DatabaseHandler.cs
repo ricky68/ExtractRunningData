@@ -7,17 +7,6 @@ namespace ExtractRunningData.Classes
 {
     public static class DatabaseHandler
     {
-        public static bool DoesTableExist(DbContext context, string tableName)
-        {
-
-            var connection = context.Database.GetDbConnection();
-            connection.Open();
-            var tables = connection.GetSchema("Tables", [null, null, tableName, null]);
-            connection.Close();
-
-            return tables.Rows.Cast<DataRow>().Any(row => row["TABLE_NAME"].ToString() == tableName);
-        }
-
         public static void SaveEventDataToDatabase(EventDataContext context, List<RunningEventData> EventDataList)
         {
             try

@@ -38,7 +38,7 @@ namespace ExtractRunningData.Classes
             // "Women" and "Men" are the first two sheets in the Excel file
             while (reader.Name == "Women" || reader.Name == "Men")
             {
-                //skip first row
+                //skip first row and add the data to our models
                 reader.Read();
                 while (reader.Read())
                 {
@@ -61,7 +61,6 @@ namespace ExtractRunningData.Classes
                             Factor = reader.GetDouble(i),
                             RunningEventDataId = runningEventData.RunningEventDataId,
                             RunningEventData = runningEventData
-                            // Add more properties as needed
                         };
                         eventFactorList.Add(eventFactors);
                     }
