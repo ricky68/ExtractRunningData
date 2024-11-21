@@ -27,4 +27,4 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Run unit tests
-      run: dotnet test "Unit Tests --filter "FullyQualifiedName=ExtractRunningDataTests.Unit" --no-build --verbosity normal
+      run: dotnet test "Unit Tests" --filter "FullyQualifiedName=ExtractRunningDataTests.Unit" --no-build --verbosity normal
