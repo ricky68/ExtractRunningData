@@ -19,6 +19,7 @@ namespace ExtractRunningDataTests.Unit
         }
 
         [Test, Description("Save event data to database")]
+        [Category("UnitTest")]
         public void CanSaveEventDataToDatabase()
         {
             // Arrange
@@ -32,6 +33,7 @@ namespace ExtractRunningDataTests.Unit
         }
 
         [Test, Description("Check 1st excel row is the same as 1st database row")]
+        [Category("UnitTest")]
         public void CheckFirstExcelRowIsSameAsFirstDatabaseRow()
         {
             // Arrange: Setup event data
@@ -51,6 +53,7 @@ namespace ExtractRunningDataTests.Unit
         }
 
         [Test, Description("Check last excel row is the same as last database row")]
+        [Category("UnitTest")]
         public void CheckLastExcelRowIsSameAsLastDatabaseRow()
         {
             // Arrange

@@ -11,6 +11,7 @@ namespace ExtractRunningDataTests.Unit
     internal class ExcelTests : TestSetupBase
     {
         [Test, Description("Check if the file can be opened")]
+        [Category("UnitTest")]
         public void CanOpenFile()
         {
             // Assert: Verify the file stream is not null
@@ -18,6 +19,7 @@ namespace ExtractRunningDataTests.Unit
         }
 
         [Test, Description("Read event data from Excel file")]
+        [Category("UnitTest")]
         public void CanReadEventDataFromExcel()
         {
             // Assert: Verify the event data list is not null

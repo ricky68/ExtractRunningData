@@ -28,6 +28,7 @@ namespace ExtractRunningDataTests.Integration
         }
 
         [Test, Description("Check Table Exists using real database from appsettings.json")]
+        [Category("IntegrationTest")]
         public void CheckTableExists()
         {
             // Arrange
@@ -46,6 +47,7 @@ namespace ExtractRunningDataTests.Integration
         }
 
         [Test, Description("Check Column Exists using real database from appsettings.json")]
+        [Category("IntegrationTest")]
         public void CheckColumnExists()
         {
             // Arrange
@@ -64,6 +66,7 @@ namespace ExtractRunningDataTests.Integration
         }
 
         [Test, Description("Check tables have data using real database from appsettings.json")]
+        [Category("IntegrationTest")]
         public void CheckTablesHaveData()
         {
             // Arrange
