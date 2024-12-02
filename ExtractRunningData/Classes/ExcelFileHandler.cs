@@ -13,8 +13,16 @@ using MySqlConnector;
 
 namespace ExtractRunningData.Classes
 {
+    /// <summary>
+    /// ExcelFileHandler: Reads data from an Excel file and returns a list of RunningEventData objects.
+    /// </summary>
     public static class ExcelFileHandler
     {
+        /// <summary>
+        /// ProcessExcelFile: Processes an Excel file and returns a list of RunningEventData objects.
+        /// </summary>
+        /// <param name="filePath"></param>
+        /// <returns>List<RunningEventData></returns>
         public static List<RunningEventData> ProcessExcelFile(string filePath)
         {
             // read data from D:\projects\ExtractRunningData\wavacalc15.xls
@@ -26,6 +34,11 @@ namespace ExtractRunningData.Classes
             //PrintEventData(eventDataList);
         }
 
+        /// <summary>
+        /// ReadEventDataFromExcel: Process Stream and return a list of RunningEventData objects.
+        /// </summary>
+        /// <param name="stream"></param>
+        /// <returns>List<RunningEventData></returns>
         public static List<RunningEventData> ReadEventDataFromExcel(Stream stream)
         {
             List<RunningEventData> eventDataList = [];

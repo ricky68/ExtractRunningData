@@ -8,8 +8,15 @@ using System.Threading.Tasks;
 
 namespace ExtractRunningDataTests.Unit
 {
+    /// <summary>
+    /// Unit tests for Excel file handling
+    /// </summary>
+    [TestFixture]
     internal class ExcelTests : TestSetupBase
     {
+        /// <summary>
+        /// Check if the file can be opened
+        /// </summary>
         [Test, Description("Check if the file can be opened")]
         [Category("UnitTest")]
         public void CanOpenFile()
@@ -18,6 +25,9 @@ namespace ExtractRunningDataTests.Unit
             Assert.That(_stream, Is.Not.Null, "File stream should not be null");
         }
 
+        /// <summary>
+        /// Read event data from Excel file
+        /// </summary>
         [Test, Description("Read event data from Excel file")]
         [Category("UnitTest")]
         public void CanReadEventDataFromExcel()

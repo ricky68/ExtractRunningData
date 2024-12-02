@@ -1,5 +1,8 @@
 ﻿namespace ExtractRunningData.Models
 {
+    /// <summary>
+    /// Interface for RunningEventFactors
+    /// </summary>
     public interface IRunningEventFactors
     {
         int Age { get; set; }
@@ -9,6 +12,9 @@
         double Factor { get; set; }
     }
 
+    /// <summary>
+    /// Interface for RunningEventData
+    /// </summary>
     public interface IRunningEventData
     {
         double Distance { get; set; }

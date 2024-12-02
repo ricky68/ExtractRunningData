@@ -4,16 +4,18 @@ using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 
 namespace ExtractRunningData
 {
-    public class EventDataContext : DbContext, IEventDataContext, IDisposable
+    /// <summary>
+    /// EventDataContext class
+    /// </summary>
+    /// <remarks>
+    /// Constructor
+    /// </remarks>
+    /// <param name="options"></param>
+    public class EventDataContext(DbContextOptions<EventDataContext> options) : DbContext(options), IEventDataContext
     {
-        private readonly DbContextOptions<EventDataContext> _options;
-
-        public EventDataContext(DbContextOptions<EventDataContext> options)
-            : base(options)
-        {
-            _options = options;
-        }
-
-        public DbSet<RunningEventData> RunningEventData { get; set; }
+        /// <summary>
+        /// RunningEventData DbSet
+        /// </summary>
+        public DbSet<RunningEventData> RunningEventData { get; set; } = default!;
     }
 }

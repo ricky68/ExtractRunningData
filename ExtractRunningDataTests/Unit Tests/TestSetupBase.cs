@@ -13,6 +13,10 @@ using Microsoft.Extensions.Configuration;
 
 namespace ExtractRunningDataTests.Unit
 {
+    /// <summary>
+    /// Base class for setting up the test environment
+    /// </summary>
+    [TestFixture]
     public abstract class TestSetupBase
     {
         protected FileStream? _stream;
@@ -20,6 +24,9 @@ namespace ExtractRunningDataTests.Unit
         protected IConfigurationRoot _configuration;
         protected EventDataContext _context;
 
+        /// <summary>
+        /// Setup the test environment
+        /// </summary>
         [SetUp]
         public void Setup()
         {
@@ -40,6 +47,9 @@ namespace ExtractRunningDataTests.Unit
             _eventDataList = ExcelFileHandler.ReadEventDataFromExcel(_stream);
         }
 
+        /// <summary>
+        /// Tear down the test environment
+        /// </summary>
         [TearDown]
         public void TearDown()
         {

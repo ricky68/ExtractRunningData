@@ -10,11 +10,18 @@ using Microsoft.Extensions.Options;
 
 namespace ExtractRunningDataTests.Integration
 {
+    /// <summary>
+    /// Integration tests for the database
+    /// </summary>
+    [TestFixture]
     public class DbIntegrationTest
     {
         private static IConfigurationRoot? Configuration { get; set; }
         private static DbContextOptionsBuilder<EventDataContext> optionsBuilder = new();
 
+        /// <summary>
+        /// Setup the configuration and options for the database
+        /// </summary>
         [SetUp]
         public void Setup()
         {
@@ -27,6 +34,9 @@ namespace ExtractRunningDataTests.Integration
                 , new MySqlServerVersion(new Version(11, 5, 2)));
         }
 
+        /// <summary>
+        /// Check if the table exists in the database
+        /// </summary>
         [Test, Description("Check Table Exists using real database from appsettings.json")]
         [Category("IntegrationTest")]
         public void CheckTableExists()
@@ -46,6 +56,9 @@ namespace ExtractRunningDataTests.Integration
             });
         }
 
+        /// <summary>
+        /// Check if the column exists in the table
+        /// </summary>
         [Test, Description("Check Column Exists using real database from appsettings.json")]
         [Category("IntegrationTest")]
         public void CheckColumnExists()
@@ -65,6 +78,9 @@ namespace ExtractRunningDataTests.Integration
             });
         }
 
+        /// <summary>
+        /// Check tables have data
+        /// </summary>
         [Test, Description("Check tables have data using real database from appsettings.json")]
         [Category("IntegrationTest")]
         public void CheckTablesHaveData()
@@ -86,7 +102,12 @@ namespace ExtractRunningDataTests.Integration
             });
         }
 
-
+        /// <summary>
+        /// Check if the table exists in the database
+        /// </summary>
+        /// <param name="context"></param>
+        /// <param name="tableName"></param>
+        /// <returns>bool</returns>
         public static bool DoesTableExist(DbContext context, string tableName)
         {
 

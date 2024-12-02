@@ -9,8 +9,15 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ExtractRunningDataTests.Unit
 {
+    /// <summary>
+    /// Test class for database operations
+    /// </summary>
+    [TestFixture]
     internal class DatabaseTests : TestSetupBase
     {
+        /// <summary>
+        /// Setup the test environment
+        /// </summary>
         [SetUp]
         public void SetUp()
         {
@@ -18,6 +25,9 @@ namespace ExtractRunningDataTests.Unit
             DatabaseHandler.SaveEventDataToDatabase(_context, _eventDataList);
         }
 
+        /// <summary>
+        /// Test to verify that event data is saved to the database
+        /// </summary>
         [Test, Description("Save event data to database")]
         [Category("UnitTest")]
         public void CanSaveEventDataToDatabase()
@@ -32,6 +42,9 @@ namespace ExtractRunningDataTests.Unit
             Assert.That(firstRow, Is.Not.Null);
         }
 
+        /// <summary>
+        /// Test to verify that the first row in the Excel file is the same as the first row in the database
+        /// </summary>
         [Test, Description("Check 1st excel row is the same as 1st database row")]
         [Category("UnitTest")]
         public void CheckFirstExcelRowIsSameAsFirstDatabaseRow()
@@ -52,6 +65,9 @@ namespace ExtractRunningDataTests.Unit
             });
         }
 
+        /// <summary>
+        /// Test to verify that the last row in the Excel file is the same as the last row in the database
+        /// </summary>
         [Test, Description("Check last excel row is the same as last database row")]
         [Category("UnitTest")]
         public void CheckLastExcelRowIsSameAsLastDatabaseRow()
